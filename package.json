@@ -5,9 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test:unit": "jest"
   },
   "dependencies": {
+    "@vue/cli-plugin-unit-jest": "^4.5.7",
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
@@ -18,11 +20,15 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.5.2",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-vue": "^6.2.2",
+    "jest": "^26.5.3",
     "prettier": "2.1.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-jest": "^3.0.7",
+    "vue-template-compiler": "^2.6.11",
+    "vue-test-utils": "^1.0.0-beta.11"
   },
   "eslintConfig": {
     "root": true,
@@ -38,11 +44,26 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/__mocks__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ],
     "rules": {}
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "jest": {
+    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
+  }
 }
