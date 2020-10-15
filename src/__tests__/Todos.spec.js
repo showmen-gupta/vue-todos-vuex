@@ -26,10 +26,14 @@ describe("Todos", () => {
   });
 
   it("Should update todos in store when double clicked.", () => {
-    console.log(wrapper);
+    wrapper.find(".todo").trigger("dblclick");
+
+    expect(storeMocks.actions.updateTodo).toBeCalled();
   });
 
   it("Should remove todos from store when trash button clicked.", () => {
-    console.log(wrapper);
+    wrapper.find(".fa-trash-alt").trigger("click");
+
+    expect(storeMocks.actions.deleteTodo).toBeCalled();
   });
 });
