@@ -32,9 +32,7 @@ npm run lint
 
 ### Fake Rest Api For Testing
 
-```
 https://jsonplaceholder.typicode.com/
-```
 
 ### Customize configuration
 
