@@ -30,6 +30,12 @@ npm run test:unit
 npm run lint
 ```
 
+### Fake Rest Api For Testing
+
+```
+https://jsonplaceholder.typicode.com/
+```
+
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
